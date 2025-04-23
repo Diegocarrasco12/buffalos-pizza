@@ -16,13 +16,23 @@ function irAlMenu() {
     const totalEl = document.getElementById("total");
   
     lista.innerHTML = "";
-    carrito.forEach((item) => {
+  
+    carrito.forEach((item, index) => {
       const li = document.createElement("li");
-      li.textContent = `${item.nombre} - $${item.precio}`;
+      li.innerHTML = `
+        ${item.nombre} - $${item.precio}
+        <button class="eliminar-btn" onclick="eliminarDelCarrito(${index})">❌</button>
+      `;
       lista.appendChild(li);
     });
   
     totalEl.textContent = `Total: $${total}`;
+  }
+  
+  function eliminarDelCarrito(index) {
+    total -= carrito[index].precio;
+    carrito.splice(index, 1);
+    actualizarCarrito();
   }
   
   function finalizarPedido() {
