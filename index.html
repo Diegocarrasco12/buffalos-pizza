@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buffalo's Pizza</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="header-banner">
+        <img src="img/bg-textura.png" alt="Buffalo's Pizza Banner" class="logo-banner" />
+      </header>
+  </header>
+
+  <section class="oferta">
+    <h2>Oferta Especial</h2>
+    <img src="img/promo-oferta.png" alt="Oferta 2x1 Buffalo's Pizza" class="promo-img" />
+    <button onclick="irAlMenu()">Ver Menú</button>
+  </section>  
+
+  <section id="menu" class="menu">
+    <h2>Nuestro Menú</h2>
+    <div class="menu-grid">
+
+      <!-- Pizza 1 -->
+      <div class="pizza-card">
+        <img src="img/pollo_bbq.jpg" alt="Pollo BBQ Pizza">
+        <h3>Pollo BBQ Pizza</h3>
+        <ul>
+          <li>Salsa BBQ</li>
+          <li>Queso mozzarella</li>
+          <li>Pollo</li>
+          <li>Cebolla caramelizada</li>
+          <li>Tocino</li>
+        </ul>
+        <button class="add-to-cart" onclick="agregarAlCarrito('Pollo BBQ Pizza', 8500)">Agregar al carrito</button>
+      </div>
+
+      <!-- Pizza 2 -->
+      <div class="pizza-card">
+        <img src="img/napolitana.jpg" alt="Napolitana Pizza">
+        <h3>Napolitana Pizza</h3>
+        <ul>
+          <li>Salsa de tomate natural</li>
+          <li>Queso mozzarella</li>
+          <li>Jamón</li>
+          <li>Aceitunas</li>
+        </ul>
+        <button class="add-to-cart" onclick="agregarAlCarrito('Napolitana Pizza', 8000)">Agregar al carrito</button>
+      </div>
+
+      <!-- Pizza 3 -->
+      <div class="pizza-card">
+        <img src="img/hawaiana.jpg" alt="Hawaiana Pizza">
+        <h3>Hawaiana Pizza</h3>
+        <ul>
+          <li>Salsa de tomate natural</li>
+          <li>Queso mozzarella</li>
+          <li>Piña</li>
+          <li>Tocino</li>
+        </ul>
+        <button class="add-to-cart" onclick="agregarAlCarrito('Hawaiana Pizza', 8500)">Agregar al carrito</button>
+      </div>
+
+      <!-- Pizza 4 -->
+      <div class="pizza-card">
+        <img src="img/espanola.jpg" alt="Española Pizza">
+        <h3>Española Pizza</h3>
+        <ul>
+          <li>Salsa de tomate natural</li>
+          <li>Queso mozzarella</li>
+          <li>Choricillo</li>
+          <li>Cebolla caramelizada</li>
+          <li>Peperoni</li>
+        </ul>
+        <button class="add-to-cart" onclick="agregarAlCarrito('Española Pizza', 8900)">Agregar al carrito</button>
+      </div>
+
+      <!-- Pizza 5 -->
+      <div class="pizza-card">
+        <img src="img/peperoni.jpg" alt="Peperoni Pizza">
+        <h3>Peperoni Pizza</h3>
+        <ul>
+          <li>Salsa de tomate natural</li>
+          <li>Queso mozzarella</li>
+          <li>Peperoni</li>
+        </ul>
+        <button class="add-to-cart" onclick="agregarAlCarrito('Peperoni Pizza', 8000)">Agregar al carrito</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="carrito" class="carrito">
+    <h2>🛒 Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p id="total">Total: $0</p>
+    <button onclick="finalizarPedido()">Finalizar pedido</button>
+  </section>
+
+  <section id="transferencia" class="transferencia" style="display: none;">
+    <h2>📄 Datos para la transferencia</h2>
+    <p><strong>Titular:</strong> Daniela Andrea Moreno Arrue</p>
+    <p><strong>Banco:</strong> Santander</p>
+    <p><strong>Cuenta Vista:</strong> 05617887209</p>
+    <p><strong>RUT:</strong> 17.887.209-5</p>
+    <p id="total-transferencia"><strong>Total a pagar:</strong> $0</p>
+    <a href="https://wa.me/56968216070?text=Hola!%20Ya%20realicé%20mi%20transferencia%20por%20mi%20pedido%20en%20Buffalo's%20Pizza.%20Adjunto%20el%20comprobante." target="_blank" class="btn-wsp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+          <path d="M20.52 3.48A11.89 11.89 0 0 0 12 0C5.37 0 0 5.38 0 12a11.93 11.93 0 0 0 1.71 6.19L0 24l6.33-1.66A11.87 11.87 0 0 0 12 24c6.63 0 12-5.38 12-12a11.89 11.89 0 0 0-3.48-8.52Zm-8.5 17.52a9.52 9.52 0 0 1-4.84-1.3l-.35-.2-3.75.99 1-3.66-.23-.37a9.59 9.59 0 1 1 8.17 4.54Zm5.24-7.22c-.29-.14-1.69-.83-1.95-.93s-.45-.14-.64.15-.74.93-.91 1.12-.34.22-.63.07a7.61 7.61 0 0 1-2.23-1.37 8.31 8.31 0 0 1-1.52-1.9c-.16-.28 0-.43.12-.57s.29-.34.44-.51a1.87 1.87 0 0 0 .29-.48.52.52 0 0 0 0-.49c-.07-.15-.64-1.55-.88-2.12s-.47-.49-.64-.5-.35 0-.54 0a1 1 0 0 0-.72.34 3 3 0 0 0-.94 2.25 5.23 5.23 0 0 0 1.1 2.63 11.86 11.86 0 0 0 4.6 4.23c.64.27 1.13.43 1.52.55a3.6 3.6 0 0 0 1.64.1 2.65 2.65 0 0 0 1.75-1.22 2.14 2.14 0 0 0 .15-1.22c-.06-.12-.26-.19-.55-.33Z"/>
+        </svg>
+        Enviar comprobante por WhatsApp
+      </a>
+            
+    <button onclick="volverAlMenu()">Volver al menú</button>
+  </section>
+
+  <footer class="footer">
+    <p>📍 El Rincón, Callejón Los Pinos, Mostazal</p>
+    <a href="https://instagram.com" target="_blank">Síguenos en Instagram</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
